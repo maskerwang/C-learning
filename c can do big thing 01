@@ -1,0 +1,23 @@
+int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
+	_In_opt_ HINSTANCE hPrevInstance,
+	_In_ LPWSTR    lpCmdLine,
+	_In_ int       nCmdShow)
+{
+
+	// TODO: 在此放置代码。
+
+	int result = MessageBox(NULL, TEXT("你是好人吗？"), TEXT("询问"), MB_YESNO | MB_ICONQUESTION);
+	if (IDYES == result)
+	{
+		int i = MessageBox(NULL, TEXT("你看你就不像好人"), TEXT("警告"), MB_OK | MB_ICONWARNING);
+		if (i == IDOK)
+		{
+			MessageBox(NULL, TEXT("开始格式化C盘！"), TEXT("警告"), MB_OK | MB_ICONWARNING);
+		}
+	}
+	else
+	{
+		MessageBox(NULL, TEXT("尝试把你变成好人失败，是否重试？"), TEXT("警告"), MB_RETRYCANCEL | MB_ICONWARNING);
+	}
+}
+//恶搞程序
